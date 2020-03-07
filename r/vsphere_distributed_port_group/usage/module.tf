@@ -1,0 +1,54 @@
+module "vsphere_distributed_port_group" {
+  source = "./vsphere/r/vsphere_distributed_port_group"
+
+  active_uplinks                         = []
+  allow_forged_transmits                 = null
+  allow_mac_changes                      = null
+  allow_promiscuous                      = null
+  auto_expand                            = null
+  block_all_ports                        = null
+  block_override_allowed                 = null
+  check_beacon                           = null
+  custom_attributes                      = {}
+  description                            = null
+  directpath_gen2_allowed                = null
+  distributed_virtual_switch_uuid        = null
+  egress_shaping_average_bandwidth       = null
+  egress_shaping_burst_size              = null
+  egress_shaping_enabled                 = null
+  egress_shaping_peak_bandwidth          = null
+  failback                               = null
+  ingress_shaping_average_bandwidth      = null
+  ingress_shaping_burst_size             = null
+  ingress_shaping_enabled                = null
+  ingress_shaping_peak_bandwidth         = null
+  lacp_enabled                           = null
+  lacp_mode                              = null
+  live_port_moving_allowed               = null
+  name                                   = null
+  netflow_enabled                        = null
+  netflow_override_allowed               = null
+  network_resource_pool_key              = null
+  network_resource_pool_override_allowed = null
+  notify_switches                        = null
+  number_of_ports                        = null
+  port_config_reset_at_disconnect        = null
+  port_name_format                       = null
+  port_private_secondary_vlan_id         = null
+  security_policy_override_allowed       = null
+  shaping_override_allowed               = null
+  standby_uplinks                        = []
+  tags                                   = []
+  teaming_policy                         = null
+  traffic_filter_override_allowed        = null
+  tx_uplink                              = null
+  type                                   = null
+  uplink_teaming_override_allowed        = null
+  vlan_id                                = null
+  vlan_override_allowed                  = null
+
+  vlan_range = [{
+    max_vlan = null
+    min_vlan = null
+  }]
+}

@@ -23,6 +23,11 @@ output "guest_ip_addresses" {
   value       = vsphere_virtual_machine.this.guest_ip_addresses
 }
 
+output "hardware_version" {
+  description = "returns a number"
+  value       = vsphere_virtual_machine.this.hardware_version
+}
+
 output "host_system_id" {
   description = "returns a string"
   value       = vsphere_virtual_machine.this.host_system_id

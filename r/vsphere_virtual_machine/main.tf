@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.17.0"
+    vsphere = ">= 1.17.1"
   }
 }
 
@@ -29,6 +29,7 @@ resource "vsphere_virtual_machine" "this" {
   folder                                  = var.folder
   force_power_off                         = var.force_power_off
   guest_id                                = var.guest_id
+  hardware_version                        = var.hardware_version
   host_system_id                          = var.host_system_id
   hv_mode                                 = var.hv_mode
   ignored_guest_ips                       = var.ignored_guest_ips

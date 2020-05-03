@@ -1,5 +1,5 @@
 provider "vsphere" {
-  version = "1.17.0"
+  version = "1.17.1"
 
   allow_unverified_ssl  = null
   client_debug          = null

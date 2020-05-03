@@ -25,6 +25,7 @@ module "vsphere_virtual_machine" {
   folder                                  = null
   force_power_off                         = null
   guest_id                                = null
+  hardware_version                        = null
   host_system_id                          = null
   hv_mode                                 = null
   ignored_guest_ips                       = []

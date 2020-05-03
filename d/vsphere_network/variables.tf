@@ -4,6 +4,12 @@ variable "datacenter_id" {
   default     = null
 }
 
+variable "distributed_virtual_switch_uuid" {
+  description = "(optional) - Id of the distributed virtual switch of which the port group is a part of"
+  type        = string
+  default     = null
+}
+
 variable "name" {
   description = "(required) - The name or path of the network."
   type        = string

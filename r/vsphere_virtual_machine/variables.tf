@@ -142,6 +142,12 @@ variable "guest_id" {
   default     = null
 }
 
+variable "hardware_version" {
+  description = "(optional) - The hardware version for the virtual machine."
+  type        = number
+  default     = null
+}
+
 variable "host_system_id" {
   description = "(optional) - The ID of an optional host system to pin the virtual machine to."
   type        = string

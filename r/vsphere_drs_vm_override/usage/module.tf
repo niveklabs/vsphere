@@ -1,5 +1,5 @@
 module "vsphere_drs_vm_override" {
-  source = "./vsphere/r/vsphere_drs_vm_override"
+  source = "./modules/vsphere/r/vsphere_drs_vm_override"
 
   compute_cluster_id   = null
   drs_automation_level = null

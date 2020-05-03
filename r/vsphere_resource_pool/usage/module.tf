@@ -1,5 +1,5 @@
 module "vsphere_resource_pool" {
-  source = "./vsphere/r/vsphere_resource_pool"
+  source = "./modules/vsphere/r/vsphere_resource_pool"
 
   cpu_expandable          = null
   cpu_limit               = null

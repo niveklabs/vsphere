@@ -1,5 +1,5 @@
 module "vsphere_distributed_port_group" {
-  source = "./vsphere/r/vsphere_distributed_port_group"
+  source = "./modules/vsphere/r/vsphere_distributed_port_group"
 
   active_uplinks                         = []
   allow_forged_transmits                 = null

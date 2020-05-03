@@ -1,5 +1,5 @@
 module "vsphere_ha_vm_override" {
-  source = "./vsphere/r/vsphere_ha_vm_override"
+  source = "./modules/vsphere/r/vsphere_ha_vm_override"
 
   compute_cluster_id                    = null
   ha_datastore_apd_recovery_action      = null

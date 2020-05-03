@@ -1,5 +1,5 @@
 module "vsphere_host_virtual_switch" {
-  source = "./vsphere/r/vsphere_host_virtual_switch"
+  source = "./modules/vsphere/r/vsphere_host_virtual_switch"
 
   active_nics               = []
   allow_forged_transmits    = null

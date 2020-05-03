@@ -1,5 +1,5 @@
 module "vsphere_host" {
-  source = "./vsphere/r/vsphere_host"
+  source = "./modules/vsphere/r/vsphere_host"
 
   cluster     = null
   connected   = null

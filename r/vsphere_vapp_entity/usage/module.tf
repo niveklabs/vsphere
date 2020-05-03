@@ -1,5 +1,5 @@
 module "vsphere_vapp_entity" {
-  source = "./vsphere/r/vsphere_vapp_entity"
+  source = "./modules/vsphere/r/vsphere_vapp_entity"
 
   container_id      = null
   custom_attributes = {}

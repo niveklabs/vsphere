@@ -1,5 +1,5 @@
 module "vsphere_compute_cluster_vm_group" {
-  source = "./vsphere/r/vsphere_compute_cluster_vm_group"
+  source = "./modules/vsphere/r/vsphere_compute_cluster_vm_group"
 
   compute_cluster_id  = null
   name                = null

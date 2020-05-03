@@ -1,5 +1,5 @@
 module "vsphere_nas_datastore" {
-  source = "./vsphere/r/vsphere_nas_datastore"
+  source = "./modules/vsphere/r/vsphere_nas_datastore"
 
   access_mode          = null
   custom_attributes    = {}

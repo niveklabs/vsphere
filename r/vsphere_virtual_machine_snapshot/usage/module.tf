@@ -1,5 +1,5 @@
 module "vsphere_virtual_machine_snapshot" {
-  source = "./vsphere/r/vsphere_virtual_machine_snapshot"
+  source = "./modules/vsphere/r/vsphere_virtual_machine_snapshot"
 
   consolidate          = null
   description          = null

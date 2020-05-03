@@ -1,5 +1,5 @@
 module "vsphere_vnic" {
-  source = "./vsphere/r/vsphere_vnic"
+  source = "./modules/vsphere/r/vsphere_vnic"
 
   distributed_port_group  = null
   distributed_switch_port = null

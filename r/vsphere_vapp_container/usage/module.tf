@@ -1,5 +1,5 @@
 module "vsphere_vapp_container" {
-  source = "./vsphere/r/vsphere_vapp_container"
+  source = "./modules/vsphere/r/vsphere_vapp_container"
 
   cpu_expandable          = null
   cpu_limit               = null

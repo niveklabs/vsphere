@@ -1,5 +1,5 @@
 module "vsphere_datastore_cluster" {
-  source = "./vsphere/r/vsphere_datastore_cluster"
+  source = "./modules/vsphere/r/vsphere_datastore_cluster"
 
   custom_attributes                        = {}
   datacenter_id                            = null

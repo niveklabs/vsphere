@@ -1,5 +1,5 @@
 module "vsphere_distributed_virtual_switch" {
-  source = "./vsphere/r/vsphere_distributed_virtual_switch"
+  source = "./modules/vsphere/r/vsphere_distributed_virtual_switch"
 
   active_uplinks                    = []
   allow_forged_transmits            = null

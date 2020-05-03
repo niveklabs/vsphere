@@ -1,5 +1,5 @@
 module "vsphere_virtual_machine" {
-  source = "./vsphere/d/vsphere_virtual_machine"
+  source = "./modules/vsphere/d/vsphere_virtual_machine"
 
   datacenter_id              = null
   name                       = null

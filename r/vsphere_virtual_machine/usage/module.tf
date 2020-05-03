@@ -1,5 +1,5 @@
 module "vsphere_virtual_machine" {
-  source = "./vsphere/r/vsphere_virtual_machine"
+  source = "./modules/vsphere/r/vsphere_virtual_machine"
 
   alternate_guest_name                    = null
   annotation                              = null
@@ -40,6 +40,7 @@ module "vsphere_virtual_machine" {
   nested_hv_enabled                       = null
   num_cores_per_socket                    = null
   num_cpus                                = null
+  poweron_timeout                         = null
   resource_pool_id                        = null
   run_tools_scripts_after_power_on        = null
   run_tools_scripts_after_resume          = null
@@ -104,9 +105,11 @@ module "vsphere_virtual_machine" {
       }]
       windows_sysprep_text = null
     }]
-    linked_clone  = null
-    template_uuid = null
-    timeout       = null
+    linked_clone    = null
+    ovf_network_map = {}
+    ovf_storage_map = {}
+    template_uuid   = null
+    timeout         = null
   }]
 
   disk = [{
@@ -143,6 +146,7 @@ module "vsphere_virtual_machine" {
     key                   = null
     mac_address           = null
     network_id            = null
+    ovf_mapping           = null
     use_static_mac        = null
   }]
 

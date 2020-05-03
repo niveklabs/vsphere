@@ -1,5 +1,5 @@
 module "vsphere_host_port_group" {
-  source = "./vsphere/r/vsphere_host_port_group"
+  source = "./modules/vsphere/r/vsphere_host_port_group"
 
   active_nics               = []
   allow_forged_transmits    = null

@@ -1,5 +1,5 @@
 module "vsphere_file" {
-  source = "./vsphere/r/vsphere_file"
+  source = "./modules/vsphere/r/vsphere_file"
 
   create_directories = null
   datacenter         = null

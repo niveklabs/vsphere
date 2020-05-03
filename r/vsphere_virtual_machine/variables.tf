@@ -231,6 +231,12 @@ variable "num_cpus" {
   default     = null
 }
 
+variable "poweron_timeout" {
+  description = "(optional) - The amount of time, in seconds, that we will be trying to power on a VM"
+  type        = number
+  default     = null
+}
+
 variable "resource_pool_id" {
   description = "(required) - The ID of a resource pool to put the virtual machine in."
   type        = string
@@ -395,9 +401,11 @@ variable "clone" {
           windows_sysprep_text = string
         }
       ))
-      linked_clone  = bool
-      template_uuid = string
-      timeout       = number
+      linked_clone    = bool
+      ovf_network_map = map(string)
+      ovf_storage_map = map(string)
+      template_uuid   = string
+      timeout         = number
     }
   ))
   default = []
@@ -446,6 +454,7 @@ variable "network_interface" {
       key                   = number
       mac_address           = string
       network_id            = string
+      ovf_mapping           = string
       use_static_mac        = bool
     }
   ))

@@ -1,5 +1,5 @@
 module "vsphere_virtual_disk" {
-  source = "./vsphere/r/vsphere_virtual_disk"
+  source = "./modules/vsphere/r/vsphere_virtual_disk"
 
   adapter_type       = null
   create_directories = null

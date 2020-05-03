@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.16.2"
+    vsphere = ">= 1.17.0"
   }
 }
 
@@ -44,6 +44,7 @@ resource "vsphere_virtual_machine" "this" {
   nested_hv_enabled                       = var.nested_hv_enabled
   num_cores_per_socket                    = var.num_cores_per_socket
   num_cpus                                = var.num_cpus
+  poweron_timeout                         = var.poweron_timeout
   resource_pool_id                        = var.resource_pool_id
   run_tools_scripts_after_power_on        = var.run_tools_scripts_after_power_on
   run_tools_scripts_after_resume          = var.run_tools_scripts_after_resume
@@ -74,9 +75,11 @@ resource "vsphere_virtual_machine" "this" {
   dynamic "clone" {
     for_each = var.clone
     content {
-      linked_clone  = clone.value["linked_clone"]
-      template_uuid = clone.value["template_uuid"]
-      timeout       = clone.value["timeout"]
+      linked_clone    = clone.value["linked_clone"]
+      ovf_network_map = clone.value["ovf_network_map"]
+      ovf_storage_map = clone.value["ovf_storage_map"]
+      template_uuid   = clone.value["template_uuid"]
+      timeout         = clone.value["timeout"]
 
       dynamic "customize" {
         for_each = clone.value.customize
@@ -169,6 +172,7 @@ resource "vsphere_virtual_machine" "this" {
       bandwidth_share_level = network_interface.value["bandwidth_share_level"]
       mac_address           = network_interface.value["mac_address"]
       network_id            = network_interface.value["network_id"]
+      ovf_mapping           = network_interface.value["ovf_mapping"]
       use_static_mac        = network_interface.value["use_static_mac"]
     }
   }

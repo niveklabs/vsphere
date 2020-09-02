@@ -3,7 +3,7 @@
 [embedmd]:# (vsphere.tf)
 ```tf
 provider "vsphere" {
-  version = "1.18.2"
+  version = "1.18.3"
 
   # allow_unverified_ssl - (optional) is a type of bool
   allow_unverified_ssl = null

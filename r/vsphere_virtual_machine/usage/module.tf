@@ -57,6 +57,8 @@ module "vsphere_virtual_machine" {
   host_system_id = null
   # hv_mode - (optional) is a type of string
   hv_mode = null
+  # ide_controller_count - (optional) is a type of number
+  ide_controller_count = null
   # ignored_guest_ips - (optional) is a type of list of string
   ignored_guest_ips = []
   # latency_sensitivity - (optional) is a type of string
@@ -99,6 +101,8 @@ module "vsphere_virtual_machine" {
   run_tools_scripts_before_guest_shutdown = null
   # run_tools_scripts_before_guest_standby - (optional) is a type of bool
   run_tools_scripts_before_guest_standby = null
+  # sata_controller_count - (optional) is a type of number
+  sata_controller_count = null
   # scsi_bus_sharing - (optional) is a type of string
   scsi_bus_sharing = null
   # scsi_controller_count - (optional) is a type of number
@@ -177,6 +181,7 @@ module "vsphere_virtual_machine" {
 
   disk = [{
     attach            = null
+    controller_type   = null
     datastore_id      = null
     device_address    = null
     disk_mode         = null

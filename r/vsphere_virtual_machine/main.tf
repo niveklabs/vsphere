@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.20.0"
+    vsphere = ">= 1.21.0"
   }
 }
 
@@ -33,6 +33,7 @@ resource "vsphere_virtual_machine" "this" {
   hardware_version                        = var.hardware_version
   host_system_id                          = var.host_system_id
   hv_mode                                 = var.hv_mode
+  ide_controller_count                    = var.ide_controller_count
   ignored_guest_ips                       = var.ignored_guest_ips
   latency_sensitivity                     = var.latency_sensitivity
   memory                                  = var.memory
@@ -54,6 +55,7 @@ resource "vsphere_virtual_machine" "this" {
   run_tools_scripts_before_guest_reboot   = var.run_tools_scripts_before_guest_reboot
   run_tools_scripts_before_guest_shutdown = var.run_tools_scripts_before_guest_shutdown
   run_tools_scripts_before_guest_standby  = var.run_tools_scripts_before_guest_standby
+  sata_controller_count                   = var.sata_controller_count
   scsi_bus_sharing                        = var.scsi_bus_sharing
   scsi_controller_count                   = var.scsi_controller_count
   scsi_type                               = var.scsi_type
@@ -145,6 +147,7 @@ resource "vsphere_virtual_machine" "this" {
     for_each = var.disk
     content {
       attach            = disk.value["attach"]
+      controller_type   = disk.value["controller_type"]
       datastore_id      = disk.value["datastore_id"]
       disk_mode         = disk.value["disk_mode"]
       disk_sharing      = disk.value["disk_sharing"]

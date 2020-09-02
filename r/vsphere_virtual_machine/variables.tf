@@ -166,6 +166,12 @@ variable "hv_mode" {
   default     = null
 }
 
+variable "ide_controller_count" {
+  description = "(optional) - The number of IDE controllers that Terraform manages on this virtual machine. This directly affects the amount of disks you can add to the virtual machine and the maximum disk unit number. Note that lowering this value does not remove controllers."
+  type        = number
+  default     = null
+}
+
 variable "ignored_guest_ips" {
   description = "(optional) - List of IP addresses and CIDR networks to ignore while waiting for an IP"
   type        = list(string)
@@ -287,6 +293,12 @@ variable "run_tools_scripts_before_guest_shutdown" {
 variable "run_tools_scripts_before_guest_standby" {
   description = "(optional) - Enable the execution of pre-standby scripts when VMware tools is installed."
   type        = bool
+  default     = null
+}
+
+variable "sata_controller_count" {
+  description = "(optional) - The number of SATA controllers that Terraform manages on this virtual machine. This directly affects the amount of disks you can add to the virtual machine and the maximum disk unit number. Note that lowering this value does not remove controllers."
+  type        = number
   default     = null
 }
 
@@ -434,6 +446,7 @@ variable "disk" {
   type = set(object(
     {
       attach            = bool
+      controller_type   = string
       datastore_id      = string
       device_address    = string
       disk_mode         = string

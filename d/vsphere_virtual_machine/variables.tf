@@ -4,9 +4,21 @@ variable "datacenter_id" {
   default     = null
 }
 
+variable "ide_controller_scan_count" {
+  description = "(optional) - The number of IDE controllers to scan for disk sizes and controller types on."
+  type        = number
+  default     = null
+}
+
 variable "name" {
   description = "(required) - The name or path of the virtual machine."
   type        = string
+}
+
+variable "sata_controller_scan_count" {
+  description = "(optional) - The number of SATA controllers to scan for disk sizes and controller types on."
+  type        = number
+  default     = null
 }
 
 variable "scsi_controller_scan_count" {

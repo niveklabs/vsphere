@@ -76,6 +76,12 @@ variable "custom_attributes" {
   default     = null
 }
 
+variable "datacenter_id" {
+  description = "(optional) - The ID of the datacenter where the VM is to be created."
+  type        = string
+  default     = null
+}
+
 variable "datastore_cluster_id" {
   description = "(optional) - The ID of a datastore cluster to put the virtual machine in."
   type        = string
@@ -448,7 +454,7 @@ variable "disk" {
 }
 
 variable "network_interface" {
-  description = "nested mode: NestingList, min items: 1, max items: 10"
+  description = "nested mode: NestingList, min items: 0, max items: 10"
   type = set(object(
     {
       adapter_type          = string
@@ -464,6 +470,22 @@ variable "network_interface" {
       use_static_mac        = bool
     }
   ))
+  default = []
+}
+
+variable "ovf_deploy" {
+  description = "nested mode: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      disk_provisioning    = string
+      ip_allocation_policy = string
+      ip_protocol          = string
+      local_ovf_path       = string
+      ovf_network_map      = map(string)
+      remote_ovf_url       = string
+    }
+  ))
+  default = []
 }
 
 variable "vapp" {

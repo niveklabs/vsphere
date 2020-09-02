@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.17.4"
+    vsphere = ">= 1.18.0"
   }
 }
 
@@ -18,6 +18,7 @@ resource "vsphere_virtual_machine" "this" {
   cpu_share_count                         = var.cpu_share_count
   cpu_share_level                         = var.cpu_share_level
   custom_attributes                       = var.custom_attributes
+  datacenter_id                           = var.datacenter_id
   datastore_cluster_id                    = var.datastore_cluster_id
   datastore_id                            = var.datastore_id
   efi_secure_boot_enabled                 = var.efi_secure_boot_enabled
@@ -175,6 +176,18 @@ resource "vsphere_virtual_machine" "this" {
       network_id            = network_interface.value["network_id"]
       ovf_mapping           = network_interface.value["ovf_mapping"]
       use_static_mac        = network_interface.value["use_static_mac"]
+    }
+  }
+
+  dynamic "ovf_deploy" {
+    for_each = var.ovf_deploy
+    content {
+      disk_provisioning    = ovf_deploy.value["disk_provisioning"]
+      ip_allocation_policy = ovf_deploy.value["ip_allocation_policy"]
+      ip_protocol          = ovf_deploy.value["ip_protocol"]
+      local_ovf_path       = ovf_deploy.value["local_ovf_path"]
+      ovf_network_map      = ovf_deploy.value["ovf_network_map"]
+      remote_ovf_url       = ovf_deploy.value["remote_ovf_url"]
     }
   }
 

@@ -4,6 +4,12 @@ variable "cluster" {
   default     = null
 }
 
+variable "cluster_managed" {
+  description = "(optional) - Must be set if host is a member of a managed compute_cluster resource."
+  type        = bool
+  default     = null
+}
+
 variable "connected" {
   description = "(optional) - Set the state of the host. If set to false then the host will be asked to disconnect."
   type        = bool

@@ -89,6 +89,8 @@ module "vsphere_compute_cluster" {
   ha_vm_restart_timeout = null
   # host_cluster_exit_timeout - (optional) is a type of number
   host_cluster_exit_timeout = null
+  # host_managed - (optional) is a type of bool
+  host_managed = null
   # host_system_ids - (optional) is a type of set of string
   host_system_ids = []
   # name - (required) is a type of string

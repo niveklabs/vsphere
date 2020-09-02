@@ -261,6 +261,12 @@ variable "host_cluster_exit_timeout" {
   default     = null
 }
 
+variable "host_managed" {
+  description = "(optional) - Must be set if cluster enrollment is managed from host resource."
+  type        = bool
+  default     = null
+}
+
 variable "host_system_ids" {
   description = "(optional) - The managed object IDs of the hosts to put in the cluster."
   type        = set(string)

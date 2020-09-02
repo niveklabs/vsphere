@@ -3,6 +3,8 @@ module "vsphere_host" {
 
   # cluster - (optional) is a type of string
   cluster = null
+  # cluster_managed - (optional) is a type of bool
+  cluster_managed = null
   # connected - (optional) is a type of bool
   connected = null
   # datacenter - (optional) is a type of string

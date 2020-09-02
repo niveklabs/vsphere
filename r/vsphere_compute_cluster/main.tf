@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.18.1"
+    vsphere = ">= 1.18.2"
   }
 }
 
@@ -49,6 +49,7 @@ resource "vsphere_compute_cluster" "this" {
   ha_vm_restart_priority                                = var.ha_vm_restart_priority
   ha_vm_restart_timeout                                 = var.ha_vm_restart_timeout
   host_cluster_exit_timeout                             = var.host_cluster_exit_timeout
+  host_managed                                          = var.host_managed
   host_system_ids                                       = var.host_system_ids
   name                                                  = var.name
   proactive_ha_automation_level                         = var.proactive_ha_automation_level

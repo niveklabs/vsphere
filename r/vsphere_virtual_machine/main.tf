@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.19.0"
+    vsphere = ">= 1.20.0"
   }
 }
 
@@ -183,12 +183,13 @@ resource "vsphere_virtual_machine" "this" {
   dynamic "ovf_deploy" {
     for_each = var.ovf_deploy
     content {
-      disk_provisioning    = ovf_deploy.value["disk_provisioning"]
-      ip_allocation_policy = ovf_deploy.value["ip_allocation_policy"]
-      ip_protocol          = ovf_deploy.value["ip_protocol"]
-      local_ovf_path       = ovf_deploy.value["local_ovf_path"]
-      ovf_network_map      = ovf_deploy.value["ovf_network_map"]
-      remote_ovf_url       = ovf_deploy.value["remote_ovf_url"]
+      allow_unverified_ssl_cert = ovf_deploy.value["allow_unverified_ssl_cert"]
+      disk_provisioning         = ovf_deploy.value["disk_provisioning"]
+      ip_allocation_policy      = ovf_deploy.value["ip_allocation_policy"]
+      ip_protocol               = ovf_deploy.value["ip_protocol"]
+      local_ovf_path            = ovf_deploy.value["local_ovf_path"]
+      ovf_network_map           = ovf_deploy.value["ovf_network_map"]
+      remote_ovf_url            = ovf_deploy.value["remote_ovf_url"]
     }
   }
 

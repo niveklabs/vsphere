@@ -483,12 +483,13 @@ variable "ovf_deploy" {
   description = "nested mode: NestingList, min items: 0, max items: 1"
   type = set(object(
     {
-      disk_provisioning    = string
-      ip_allocation_policy = string
-      ip_protocol          = string
-      local_ovf_path       = string
-      ovf_network_map      = map(string)
-      remote_ovf_url       = string
+      allow_unverified_ssl_cert = bool
+      disk_provisioning         = string
+      ip_allocation_policy      = string
+      ip_protocol               = string
+      local_ovf_path            = string
+      ovf_network_map           = map(string)
+      remote_ovf_url            = string
     }
   ))
   default = []

@@ -214,12 +214,13 @@ module "vsphere_virtual_machine" {
   }]
 
   ovf_deploy = [{
-    disk_provisioning    = null
-    ip_allocation_policy = null
-    ip_protocol          = null
-    local_ovf_path       = null
-    ovf_network_map      = {}
-    remote_ovf_url       = null
+    allow_unverified_ssl_cert = null
+    disk_provisioning         = null
+    ip_allocation_policy      = null
+    ip_protocol               = null
+    local_ovf_path            = null
+    ovf_network_map           = {}
+    remote_ovf_url            = null
   }]
 
   vapp = [{

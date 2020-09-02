@@ -243,6 +243,12 @@ variable "num_cpus" {
   default     = null
 }
 
+variable "pci_device_id" {
+  description = "(optional) - A list of PCI passthrough devices"
+  type        = set(string)
+  default     = null
+}
+
 variable "poweron_timeout" {
   description = "(optional) - The amount of time, in seconds, that we will be trying to power on a VM"
   type        = number

@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.18.3"
+    vsphere = ">= 1.19.0"
   }
 }
 
@@ -46,6 +46,7 @@ resource "vsphere_virtual_machine" "this" {
   nested_hv_enabled                       = var.nested_hv_enabled
   num_cores_per_socket                    = var.num_cores_per_socket
   num_cpus                                = var.num_cpus
+  pci_device_id                           = var.pci_device_id
   poweron_timeout                         = var.poweron_timeout
   resource_pool_id                        = var.resource_pool_id
   run_tools_scripts_after_power_on        = var.run_tools_scripts_after_power_on

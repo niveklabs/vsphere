@@ -1,5 +1,5 @@
 provider "vsphere" {
-  version = "1.18.3"
+  version = "1.19.0"
 
   # allow_unverified_ssl - (optional) is a type of bool
   allow_unverified_ssl = null

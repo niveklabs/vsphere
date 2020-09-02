@@ -83,6 +83,8 @@ module "vsphere_virtual_machine" {
   num_cores_per_socket = null
   # num_cpus - (optional) is a type of number
   num_cpus = null
+  # pci_device_id - (optional) is a type of set of string
+  pci_device_id = []
   # poweron_timeout - (optional) is a type of number
   poweron_timeout = null
   # resource_pool_id - (required) is a type of string

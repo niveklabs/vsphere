@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.21.0"
+    vsphere = ">= 1.22.0"
   }
 }
 
@@ -58,5 +58,15 @@ resource "vsphere_compute_cluster" "this" {
   proactive_ha_provider_ids                             = var.proactive_ha_provider_ids
   proactive_ha_severe_remediation                       = var.proactive_ha_severe_remediation
   tags                                                  = var.tags
+  vsan_enabled                                          = var.vsan_enabled
+
+  dynamic "vsan_disk_group" {
+    for_each = var.vsan_disk_group
+    content {
+      cache   = vsan_disk_group.value["cache"]
+      storage = vsan_disk_group.value["storage"]
+    }
+  }
+
 }
 

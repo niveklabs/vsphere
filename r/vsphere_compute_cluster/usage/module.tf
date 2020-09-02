@@ -107,4 +107,11 @@ module "vsphere_compute_cluster" {
   proactive_ha_severe_remediation = null
   # tags - (optional) is a type of set of string
   tags = []
+  # vsan_enabled - (optional) is a type of bool
+  vsan_enabled = null
+
+  vsan_disk_group = [{
+    cache   = null
+    storage = []
+  }]
 }

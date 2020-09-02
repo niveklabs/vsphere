@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    vsphere = ">= 1.21.0"
+    vsphere = ">= 1.22.0"
   }
 }
 

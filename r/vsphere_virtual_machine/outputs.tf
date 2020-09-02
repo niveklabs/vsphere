@@ -18,6 +18,11 @@ output "default_ip_address" {
   value       = vsphere_virtual_machine.this.default_ip_address
 }
 
+output "guest_id" {
+  description = "returns a string"
+  value       = vsphere_virtual_machine.this.guest_id
+}
+
 output "guest_ip_addresses" {
   description = "returns a list of string"
   value       = vsphere_virtual_machine.this.guest_ip_addresses

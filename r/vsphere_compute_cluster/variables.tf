@@ -314,3 +314,20 @@ variable "tags" {
   default     = null
 }
 
+variable "vsan_enabled" {
+  description = "(optional) - Whether the VSAN service is enabled for the cluster."
+  type        = bool
+  default     = null
+}
+
+variable "vsan_disk_group" {
+  description = "nested mode: NestingList, min items: 0, max items: 0"
+  type = set(object(
+    {
+      cache   = string
+      storage = set(string)
+    }
+  ))
+  default = []
+}
+
